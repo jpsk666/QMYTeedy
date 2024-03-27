@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-  <parent>
+  <!-- parent node -->
+  <parent> 
     <groupId>com.sismics.docs</groupId>
     <artifactId>docs-parent</artifactId>
     <version>1.10</version>
@@ -213,10 +213,9 @@
       </build>
     </profile>
     
-    <!-- Production profile -->
+    <!-- Production profile for configuration when released-->
     <profile>
       <id>prod</id>
-      
       <build>
         <resources>
           <resource>
