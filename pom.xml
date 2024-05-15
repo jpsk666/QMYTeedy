@@ -135,6 +135,17 @@
             </goals>
             <phase>site</phase>
           </execution>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                  <goal>jar</goal>
+              </goals>
+              <phase>package</phase>
+              <configuration>
+                  <classifier>javadoc</classifier>
+                  <classesDirectory>${project.build.directory}/site</classesDirectory>
+              </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -159,19 +170,7 @@
           <reuseForks>false</reuseForks>
           <!-- <testFailureIgnore>true</testFailureIgnore> -->
         </configuration>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-                <goal>jar</goal>
-            </goals>
-            <phase>package</phase>
-            <configuration>
-                <classifier>javadoc</classifier>
-                <classesDirectory>${project.build.directory}/site</classesDirectory>
-            </configuration>
-        </execution>
-        </executions>
+
 
       </plugin>
 
