@@ -13,7 +13,7 @@ pipeline {
         }
         stage('pmd') {
             steps {
-                sh 'mvn pmd:pmd -o'
+                sh 'mvn pmd:pmd'
             }
         }
         stage('Test report') {
