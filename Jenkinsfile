@@ -16,9 +16,9 @@ pipeline {
                 sh 'mvn pmd:pmd'
             }
         }
-        stage('surefile') {
+        stage('surefire') {
             steps {
-                sh 'mvn surefire-report:report'
+                sh 'mvn verify'
             }
         }
         stage('Test report') {
