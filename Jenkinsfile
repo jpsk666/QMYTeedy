@@ -16,11 +16,6 @@ pipeline {
                 sh 'mvn pmd:pmd'
             }
         }
-        stage('surefire') {
-            steps {
-                sh 'mvn verify'
-            }
-        }
         stage('Test report') {
             steps {
                 sh 'mvn test'
