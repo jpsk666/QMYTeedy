@@ -81,6 +81,10 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
+      <repository>
+          <id>local-repo</id>
+          <url>file://${user.home}/.m2/repository</url>
+      </repository>
   </repositories>
   <build>
     <plugins>
