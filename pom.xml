@@ -141,9 +141,9 @@
           <failOnViolation>false</failOnViolation>
           <!-- printFailingErrors is pretty useful -->
           <printFailingErrors>true</printFailingErrors>
-          <rulesets>
+          <!-- <rulesets>
             <ruleset>/home/qmy/Documents/Teedy/practice-answer.xml</ruleset>
-          </rulesets>
+          </rulesets> -->
         </configuration>
         <executions>
           <execution>
