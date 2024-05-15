@@ -293,3 +293,5 @@
 27 Mar 2024 14:40:16,973 INFO com.sismics.docs.core.util.indexing.LuceneIndexingHandler.initLucene(LuceneIndexingHandler.java:115) Using RAM Lucene storage 
 27 Mar 2024 14:40:17,103 INFO com.sismics.docs.core.service.FileService.startUp(FileService.java:39) File service starting up 
 27 Mar 2024 14:40:17,112 INFO com.sismics.docs.core.service.InboxService.startUp(InboxService.java:55) Inbox service starting up 
+27 Mar 2024 14:57:16,595 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:60) Inbox service shutting down 
+27 Mar 2024 14:57:16,597 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 

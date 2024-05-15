@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+       customRules
+    </description>
+
+
+    <!-- # control branch per method-->
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+    	<properties>
+	<property name="reportLevel" value="15" />
+    	</properties>
+    </rule>
+	<!-- number of unique attributes, local variables, and return types within an object -> tight coupled -->
+    <rule ref="category/java/design.xml/CouplingBetweenObjects">
+	    <properties>
+		<property name="threshold" value="20" />
+	    </properties>
+    </rule>
+
+	<rule ref="category/java/design.xml/CyclomaticComplexity" />	
+	<!-- lines of code -->
+	<rule ref="category/java/design.xml/NcssCount" />
+    <!-- do too many things ,high WMC,low cohesion -->
+	<rule ref="category/java/design.xml/GodClass" />
+
+</ruleset>
