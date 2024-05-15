@@ -18,7 +18,7 @@ pipeline {
         }
         stage('doc') {
             steps {
-                sh 'mvn javadoc:javadoc'
+                sh 'mvn -X javadoc:javadoc'
             }
         }
     }
