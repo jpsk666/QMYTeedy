@@ -18,7 +18,7 @@ pipeline {
         }
         stage('surefile') {
             steps {
-                sh 'mvn surefile-report:report'
+                sh 'mvn surefire-report:report'
             }
         }
         stage('Test report') {
