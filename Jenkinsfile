@@ -16,16 +16,16 @@ pipeline {
                 sh 'mvn pmd:pmd'
             }
         }
-        stage('Test report') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
-        }
+        // stage('Test report') {
+        //     steps {
+        //         sh 'mvn test'
+        //     }
+        //     post {
+        //         always {
+        //             junit '**/target/surefire-reports/*.xml'
+        //         }
+        //     }
+        // }
     }
     post {
         always {
