@@ -16,6 +16,11 @@ pipeline {
                 sh 'mvn pmd:pmd'
             }
         }
+        stage('surefile') {
+            steps {
+                sh 'mvn surefile-reporty:report'
+            }
+        }
         stage('Test report') {
             steps {
                 sh 'mvn test'
