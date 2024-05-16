@@ -160,8 +160,21 @@
           <reuseForks>false</reuseForks>
           <!-- <testFailureIgnore>true</testFailureIgnore> -->
         </configuration>
-
-
+        <executions>
+          <execution>
+              <id>create-javadoc-jar</id>
+              <phase>package</phase>
+              <goals>
+                  <goal>jar</goal>
+              </goals>
+              <configuration>
+                  <classifier>javadoc</classifier>
+                  <includes>
+                      <include>**/*</include>
+                  </includes>
+              </configuration>
+          </execution>
+      </executions>
       </plugin>
 
       <plugin>
