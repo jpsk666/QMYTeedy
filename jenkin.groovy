@@ -3,29 +3,39 @@ pipeline {
     stages {
         stage('Package') {
             steps {
-                checkout scm
-                git(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jpsk666/QMYTeedy.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [],
+                userRemoteConfigs: [[url: 'https://github.com/traccytian/Teedy_2024.git']])
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        
         // Building Docker images
         stage('Building image') {
             steps {
-                // 在这里添加构建 Docker 镜像的命令
+                sh 'docker build -t teedy_manual .'
             }
         }
+        
         // Uploading Docker images into Docker Hub
         stage('Upload image') {
             steps {
-                // 在这里添加上传 Docker 镜像到 Docker Hub 的命令
+                sh '''
+                docker login
+                docker tag teedy_manual transymbol/teedy_local:v1.0
+                docker push transymbol/teedy_local:v1.0
+                '''
             }
         }
+        
         // Running Docker container
         stage('Run containers') {
             steps {
-                // 在这里添加运行 Docker 容器的命令
+                sh '''
+                docker run -d -p 8083:8080 --name teedy_jk01 teedy_manual
+                docker run -d -p 8084:8080 --name teedy_jk02 teedy_manual
+                docker run -d -p 8085:8080 --name teedy_jk03 teedy_manual
+                '''
             }
         }
     }
 }
-
